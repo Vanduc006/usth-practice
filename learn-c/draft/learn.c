@@ -12,7 +12,7 @@ void RandomInRange(int min,int max,int count,int numArray[]) {
 
 int main() {
     srand(time(0)); // Seed for randomness
-    int count = 3;
+    int count = 2;
     int numbers[count];
 
     RandomInRange(1, 10, count, numbers);
@@ -39,7 +39,7 @@ int main() {
     };
     printf("Your goal is ");
     printf("%d",goal);
-    printf("\n")
+    printf("\n");
 
     return 0;
 }
