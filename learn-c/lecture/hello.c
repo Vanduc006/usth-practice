@@ -2,8 +2,6 @@
 
 int main() {
     float a,b;
-    
-    
     printf("Enter numbers \n");
     scanf("%f %f", &a, &b);
     if ( a = 1)
