@@ -1,0 +1,41 @@
+Write a pseudocode and implement a program in C to swap the first and last digits
+of a positive integer.
+
+--> idea
+function swap(int size, int arr[]
+#int a,int b
+) {
+    int temp = arr[0]
+    arr[0] = arr[size-1]
+    arr[size-1] = temp
+}
+
+--> pesudo 
+FUNCTION swap (Array, Size) :
+    SET n = Size
+    SET temp = Array[0]
+    SET Array[0] = Array[Size-1]
+    SET Array[Size-1] = temp
+    SET new = 0
+    FOR i from 0 to Size-1 :
+        new = new*10 + Array[i]
+    RETURN new
+
+MAIN :
+    GET number
+    GET size
+    SET Array[size] // size=5
+    FOR i from size-1 to 0 : // 4 --> 0
+        Array[i] = number % 10
+        number = number / 10
+
+    SET result = swap(Array, size)
+    PRINT result
+
+
+
+
+
+    
+
+    

@@ -1,4 +1,6 @@
+// #include <stdio.h>
 #include <stdio.h>
+
 int gcd(int a,int b) {
     int gcd;
     gcd = 1;
@@ -8,4 +10,6 @@ int gcd(int a,int b) {
         }
     }
     return(gcd);
+
+    
 }
