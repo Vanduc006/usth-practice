@@ -7,6 +7,7 @@
 // --> the idea
 // First we need array of prime number < number input ?
 
+
 int main() {
     int number;
     scanf("%d",&number);

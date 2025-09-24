@@ -1,6 +1,16 @@
 Write a pseudocode and implement a program in C to swap the first and last digits
 of a positive integer.
 
+1234 int -> array [1,2,3,4]  -> [4,3,2,1] -> 
+array[0]
+array[size-1]
+temp
+4231
+
+array2 = 0 + 4
+4321
+
+
 --> idea
 function swap(int size, int arr[]
 #int a,int b
