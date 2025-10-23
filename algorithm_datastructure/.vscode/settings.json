@@ -1,7 +1,17 @@
 {
     "files.associations": {
         "map": "c",
-        "ostream": "c"
+        "ostream": "c",
+        "array": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "memory": "c",
+        "optional": "c",
+        "string_view": "c",
+        "istream": "c",
+        "streambuf": "c",
+        "functional": "c",
+        "tuple": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

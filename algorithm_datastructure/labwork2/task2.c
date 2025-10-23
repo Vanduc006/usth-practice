@@ -9,13 +9,13 @@
 struct _Car {
     int passenger;
     char id[MAXID];
-    struct _Car *pnext;
+    struct _Car enqeue(&queue, &item[1]);enqeue(&queue, &item[1]);*pnext;
 };
 typedef struct _Car Car;
 
 struct _Train {
     int size;
-    // Car car[CAPACITY];
+    Car car[CAPACITY];
     Car *pHead;
 };
 typedef struct _Train Train;
@@ -67,24 +67,24 @@ void insert(Car *pnew, Car *ptr, Train *train) {
 }
 
 void removeCar(Train *train, const char *id) {
-    Car *car = train -> pHead;
-    if (strcmp(car -> id,id) == 0) {
-        train -> pHead = car -> pnext;
-        train -> size--;
+    if (train == NULL || train -> pHead == NULL) {
         return;
     }
+    Car *car = train -> pHead;
     Car *q = NULL;
-    car = q;
-    car = car -> pnext;
 
-    while (car != NULL && strcmp(car -> id,id) == 1) {
+    while (car != NULL && strcmp(car -> id,id) != 0) {
         q = car;
         car = car -> pnext;
     }
 
-    // remove car when while break
     if (car != NULL) {
-        q -> pnext = car -> pnext;
+        if (q == NULL) {
+            train -> pHead = car -> pnext;
+        }
+        else {
+            q -> pnext = car -> pnext;
+        }
         train -> size--;
     }
     
@@ -119,7 +119,7 @@ int main() {
 
 
     // printf("test");
-    updatePassenger(&train,&car3,7);
+    updatePassenger(&train,&car3,0);
 
     Car *car = train.pHead;
     printf("\n");

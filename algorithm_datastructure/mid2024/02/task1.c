@@ -26,7 +26,8 @@ int main() {
     while (k > 0) {
         n = n * 2;
         int bit = (int)n;
-        fractionalPart[fractionalIndex] = bit;
+        // fractionalPart[fractionalIndex] = bit;
+        printf("%d",bit);
         n = n - bit; // remove bit keep only fractiona part
         // 0.47 * 2 = 0.94 -> bit = 0
         // 0.94 * 2 = 1.88 -> bit = 1
@@ -34,9 +35,9 @@ int main() {
         fractionalIndex++;
     } // O(log(n))
 
-    for(int i=0; i < fractionalIndex; i++) {
-        printf("%d",fractionalPart[i]);
-    } // O(n)
+    // for(int i=0; i < fractionalIndex; i++) {
+    //     printf("%d",fractionalPart[i]);
+    // } // O(n)
 }
 
 // O(n)

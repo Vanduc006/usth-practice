@@ -18,7 +18,7 @@ int sort(int *arr,int size) {
 */
 
 int isPythagorean(int a,int b, int c) {
-    if (a*a + b*b == c*c) {
+    if (a*a + b*b == c*c || b*b + c*c = a*a || a*a + c*c = b*b) {
         return 1;
     }
     else {

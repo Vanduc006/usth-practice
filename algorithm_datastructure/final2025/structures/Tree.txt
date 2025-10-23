@@ -1,0 +1,117 @@
+1. Binary search tree
+A binary with special property
+- Every node value is larger than all values in it's left substree
+- Every node value is smaller than ... right substree
+
+2. Pre-order Node - Left - Right 
+           8
+         /    \
+        4      12
+       / \    /  \
+      2   5   9  14
+       \   \   \
+        3   7   10
+Display data part of root -> Traverse the left subtree recursively -> Tranverse right substree recursively
+
+Print 8
+    Go to left of 8 -> Print 4
+        Go to left of 4 -> Print 2
+            Go to left of 2 -> NULL -> Back
+            Go to right of 2 -> Print 3
+            Back to 4
+        Go to right of 4 -> Print 5
+            Go to left of 5 -> NULL -> Back
+            Go to right of 5 -> Print 7
+        Back to 8
+    Go to right of 8 -> Print 12
+        Go to left of 12 -> Print 9
+            Go to left of 9 -> NULL -> Back
+            Go to right of 9 -> Print 10
+            Back to 12
+        Go to right of 12 -> Print 14
+            Go to left of 14 -> NULL -> Back
+            Go to right of 14 -> NULL -> END
+// 8 4 2 3 5 7 12 9 10 14
+
+3. Post-order Left - Right - Node
+           8
+         /    \
+        4      12
+       / \    /  \
+      2   5   9  14
+       \   \   \
+        3   7   10
+
+Traverse the left subtree recursively -> Traverse the right subtree recursively -> Root 
+
+Node 8
+    Left of 8 -> Node 4
+        Goto left of 4 -> Node 2
+            Goto left of 2 -> NULL -> Back
+            Goto right of 2 -> Node 3
+                Goto left of 3 -> NULL -> Back 
+                Goto right of 3 -> NULL -> Print 3
+                Back to 2
+            Print 2 -> Back to 4
+        Goto right of 4 -> Node 5
+            Goto left of 5 -> NULL -> Back
+            Goto right of 5 -> Node 7
+                Goto left of 7 -> NULL -> Back
+                Goto rght of 7 -> NULL -> Print 7
+                Back to 5
+            Print 5 -> Back to 4
+        Print 4 -> Back to 8
+    Right of 8 -> Node 12
+        Goto left of 12 -> Node 9
+            Goto left of 9 -> NULL -> Back
+            Goto rght of 9 -> NULL -> Node 10
+                Goto left of 10 -> NULL -> Back
+                Goto rght of 10 -> NULL -> Print 10
+                Back to 9
+            Print 9 -> Back to 12
+        Goto right of 12 -> Node 14
+            Goto left of 14 -> NULL -> Back
+            Goto rght of 14 -> NULL -> Print 14
+            Back to 12 
+        Print 12 -> Back to 8
+Print 8
+
+// 3 2 7 5 4 10 9 14 12 8
+
+4. Right - Root - Left
+           10
+         /    \
+        4      81
+       / \    /  \
+      1   9  70  310
+
+Tranverse the right substree -> Root -> Tranverse the left substree
+
+Node 10 
+    Goto right of 10 -> Node 81
+        Go to right of 81 -> Node 310
+            Goto right of 310 -> NULL -> Print 310
+            Goto left of 310 -> NULL -> Back 
+            Print 81 -> Back to 81
+        Goto left of 81 -> Node 70
+            Goto right of 70 -> NULL -> Print 70
+            Goto left of 70 -> NULL -> Back
+        Print 10 -> Back to 10
+    Goto left of 10 -> Node 4
+        Goto right of 4 -> Node 9
+            Goto right of 9 -> NULL -> Print 9
+            Goto left of 9 -> NULL -> Back
+            Print 4 -> Back to 4
+        Goto left of 4 -> Node 1
+            Goto right of 1 -> NULL -> Print 1
+            Goto left of 1 -> NULL -> END
+    
+
+
+
+
+
+
+        
+
+

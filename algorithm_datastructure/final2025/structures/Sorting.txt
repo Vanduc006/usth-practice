@@ -1,0 +1,59 @@
+3 Similiar 
+
+1. Bubble sort
+// Iteration
+void bubble(int arr[], int n) { 
+    int swapped = 1;
+    while (swapped == 1) {
+        swapped = 0;
+        for (int i=0; i < n, i++) {
+            if (a[i-1] > a[i]) {
+                // swap
+                swapped = 1;
+            }
+        }
+    }
+}
+
+// Efficient -> O(n^2)
+// Count operation
+- First iteration take n - 1 comparisons and n - 1 swaps
+- Second take n - 2 comparisons and n - 2 swaps
+2(n-1+n-2+n-3+...+2+1)=n(n-1)
+
+2. Selection sort
+// Iteration
+void selection(int arr[], int n) {
+    int i, j;
+    for (i=0; i < n-1; i++) {
+        min = i;
+        for (j=i+1; j < n; j++) {
+            if (arr[j] < arr[min]) {
+                min = j;
+            }
+        }
+        // swap arr[min] <-> arr[j]
+    }
+}
+// Efficient -> O(n^2)
+// Count operation
+- First iteration take n - 1 comparisons, second take n - 2
+n-1+n-2+n-3+...+2+1=\frac{n(n-1)}{2}
+
+3. Insertion sort
+void insertion(int arr[], int n) {
+    int i, j;
+    for (i=0; i < n; i++) {
+        j = i;
+        while (j > 0 && arr[j-1] > arr[j]) {
+            // j got indexed by i, then loop all array
+            // swap arr[j] <-> arr[j-1]
+            j--;
+        }
+    }
+}
+
+// Efficient -> O(n^2) 
+// Count operation
+- First take 1 comparisons, second take <= 2, third take <= 3
+n-1+n-2+n-3+...+2+1=\frac{n(n-1)}{2}

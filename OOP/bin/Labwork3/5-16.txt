@@ -1,0 +1,135 @@
+5.
+In OOP have 2 types of inheritances is Concrete and Composition
+
+6.
+Inheritance have relation IS-A with concrete. Eg. Cow is animal
+Composition have realation HAS-A. Eg. Car has motor
+
+7. Concept of polymorphism
+We can treated class by using superclass
+Eg. Cow extend Animal, so we can create new Cow referecne by Animal bo = new Cow();
+// Todo : about parameters, return type
+
+8. 
+Type 1. Treated class, in task7
+Type 2. Ploymorphism in parameters, return types
+Eg. Implement with method only
+public class Animal {
+    public Animal analysis(Animal myAnimal) {
+        // Do sth
+        Eg. return myAnimal;
+    }
+}
+
+9. 
+Eg.
+// Animal class
+public class Animal {
+    private String name;
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return this.name;
+    }
+}
+// Lion class
+public class Lion extends Animal{
+    public String type;
+    @Override
+    public String getName() {
+        return "Lion name is" + this.name;
+    }
+}
+// main method
+Animal sutu = new Lion();
+sutu.setName("Bear"); ... etc
+
+10. Concept of abstraction
+Abstraction class like form for child class.
+Eg.
+public abstract class Human {
+	public abstract void sayHi();
+	public String getName() {}
+}
+
+public class Bear extends Human { // Concrete class
+	// Bear must have all methods define in Human
+	public void sayHi() {}
+	public String getName() {}
+}
+
+11. Rules of abstract class
+- Compiler auto know that no instances atributes, methods need
+- Can create object reference of abstract types
+Eg.
+// Valid 
+Human bell = new  Bear();
+// Invalid 
+Human bear = new Human();
+
+12. Rules of abstract method
+- Abstract method must be in abstract class. Concrete can't have abstract method
+- Concrete class must be overidden all methods
+
+13. Concept of interface
+All method in interface class is abstract method
+Subclass must override all method inside interface
+Interface class can't implement constructor
+
+14.
+Eg.
+public interface Livingthing {
+    public void breath();
+}
+public class Animal implements Livingthing {
+    @Override
+    public void breath() {
+
+    }
+}
+
+15.
+// Source
+public abstract class Cat {
+    public String cName;
+    public void chaseMouse() {
+        // sth
+    }
+    public abstract void meow() {
+        // sth
+    }
+}
+// My work
+This code have problem at method meow, it's abstract method -> Remove it body to fix
+
+16.
+// Source
+public class myCat {
+    public static void main(String[] args) {
+        Cat mCat = new Cat(); // 1
+        mCat.cName = "sth"; // 2
+        mCat.meow(); // 3
+    }
+}
+// My work
+Line 1 : We create object referecne mCat with Cat class
+Line 2 : In Cat class have public atribute cName with String type, so we set value to this attributes directly
+Line 3 : In Cat class have public method meow, so we can use method directly
+// Better way
+Implement default constructor
+Make all attributes in Cat class is private 
+Get & set value by public method
+Eg.
+public Cat () {}
+public Cat (String cName) {
+    this.cName = cName;
+}
+public void setCName(String cName) {
+    this.cName = cName;
+}
+public String getCName() {
+    return this.cName;
+}
+Cat mCat = new Cat("meomeo");
+mCat.setCName("meo");

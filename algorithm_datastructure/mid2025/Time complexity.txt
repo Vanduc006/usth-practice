@@ -1,0 +1,22 @@
+in task1.c 
+
+I do iteration with
+
+while (k > 0) {
+    n = n + k;
+    k =  k / 10;  
+}
+
+Which, take time complexity is Log(On)
+Because each iteration is devide k by 10, Log(n) + K time
+
+I do recursive with 
+
+int Harshad(int num) {
+    if ( num == 0) {
+        return num;
+    }
+    return num + Harshad(num / 10);
+}
+
+Which, take time complexity is OLog(n)
